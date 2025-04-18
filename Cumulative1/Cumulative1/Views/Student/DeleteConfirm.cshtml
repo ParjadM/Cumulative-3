@@ -1,0 +1,32 @@
+﻿@model Cumulative1.Model.Student
+<style>
+    button {
+        background-color: #f44336;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    body {
+        font-family: Arial;
+        background-color: #C5BAFF;
+    }
+</style>
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/StudentPage/Show/@Model.Id">Cancel</a>
+    </nav>
+    <h2>Are you sure you want to delete @Model.Studentfname  @Model.StudentLName ?</h2>
+    <p>This action cannot be undone.</p>
+    <form method="POST" action="/StudentPage/Delete/@Model.Id">
+        <button>
+            Confirm Delete
+        </button>
+    </form>
+</div>

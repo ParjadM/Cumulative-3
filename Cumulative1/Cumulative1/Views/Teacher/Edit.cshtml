@@ -1,0 +1,47 @@
+﻿@model Cumulative1.Model.Teacher
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/TeacherPage/Show/@Model.Id">Back</a>
+    </nav>
+    <h2>New Teacher</h2>
+    <form method="POST" action="/TeacherPage/Update/@Model.Id">
+        <div class="inputrow">
+            <label for="TeacherFName">First Name:</label>
+            <input type="text" id="TeacherFName" name="TeacherFName" value="@Model.Teacherfname" />
+
+        </div>
+        <div class="inputrow">
+            <label for="TeacherLname">Last Name:</label>
+            <input type="text" id="TeacherLname" name="TeacherLname" value="@Model.TeacherLName" />
+
+        </div>
+        <div class="inputrow">
+            <label for="EmployeeNumber">Email:</label>
+            <input type="text" id="EmployeeNumber" name="EmployeeNumber" value="@Model.EmployeeNumber" />
+        </div>
+        <div class="inputrow">
+            <label for="HireDate">Biography:</label>
+            <div>
+                <textarea id="HireDate" name="HireDate">@Model.HireDate</textarea>
+            </div>
+        </div>
+        <div class="inputrow">
+            <input type="submit" id="submit" value="Update Teacher" />
+        </div>
+    </form>
+</div>
+@* (Client) Error Handling on Update when the Teacher Name is empty *@
+@* error handling in the client side *@
+<script>
+    var submit = document.getElementById("submit");
+
+    submit.onclick = function (){
+        var teachername = document.getElementById("TeacherFName").value.trim();
+        if (teachername === ""){
+        alert("Please enter a teacher name");
+        return false;
+        }
+
+    }
+</script>

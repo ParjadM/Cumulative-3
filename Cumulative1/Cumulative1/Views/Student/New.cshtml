@@ -1,0 +1,46 @@
+﻿@model Cumulative1.Model.Student
+<style>
+    h1 {
+        color: #C4D9FF;
+    }
+
+    div {
+        border: 1px solid black;
+    }
+
+    body {
+        font-family: Arial;
+        background-color: #C5BAFF;
+    }
+</style>﻿﻿
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/StudentPage/List">Back To Students</a>
+    </nav>
+    <h2>New Student</h2>
+    <form method="POST" action="/StudentPage/Create">
+        <div class="inputrow">
+            <label for="StudentFname">First Name:</label>
+            <input type="text" id="StudentFname" name="StudentFname" />
+
+        </div>
+        <div class="inputrow">
+            <label for="StudentLname">Last Name:</label>
+            <input type="text" id="StudentLname" name="StudentLname" />
+
+        </div>
+        <div class="inputrow">
+            <label for="Studentnumber">Employee Number:</label>
+            <input type="text" id="Studentnumber" name="Studentnumber" />
+        </div>
+        <div class="inputrow">
+            <label for="Enroldate">Enroldate:</label>
+            <div>
+                <input type="date" id="Enroldate" name="Enroldate">
+            </div>
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Create Student" />
+        </div>
+    </form>
+</div>

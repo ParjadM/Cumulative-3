@@ -1,0 +1,39 @@
+﻿@model Cumulative1.Model.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+<style>
+    h1 {
+        color: #C4D9FF;
+    }
+
+    div {
+        border: 1px solid black;
+    }
+
+    body {
+        font-family: Arial;
+        background-color: #C5BAFF;
+    }
+</style>
+<h1>Show Details</h1>
+
+@if (Model != null)
+{
+    <div>
+        <h2>Name: @(Model.Name ?? "Unknown") </h2>
+        <a href="/StudentPage/List">Back to List</a> <a class="alert-warning" href="/StudentPage/DeleteConfirm/@Model.Id">Delete</a>
+        <p><strong>Student Number:</strong> @(Model.Studentnumber ?? "Not Available")</p>
+        <p><strong>Enrol date:</strong> @(Model.Enroldate?.ToString("yyyy-MM-dd") ?? "Not Available")</p>
+    </div>
+    <a asp-action="List" asp-controller="StudentPage">
+        Back to Student List
+    </a>
+    <br />
+    <a href="/StudentPage/Edit/@Model.Id">Edit</a>
+}
+else
+{
+    <p>Student not found.</p>
+}

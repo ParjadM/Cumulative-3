@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Cumulative1.Model.Teacher>
+<style>
+    h1 {
+        color: #C4D9FF;
+    }
+
+    div {
+        border: 1px solid black;
+    }
+
+    body {
+        font-family: Arial;
+        background-color: #C5BAFF;
+    }
+    #btn {
+        background-color: green;
+        color: white;
+    }
+</style>
+<h1>Teacher Directory</h1>
+
+<div>
+    <a style="margin-bottom:10px;" href="/TeacherPage/New">Add Teacher</a>
+    <form method="GET" action="/TeacherPage/List">
+        <div>
+            <input type="text" name="SearchKey"/>
+            <input type="submit" id="btn" value="Search"/>
+        </div>    
+    </form>
+    @foreach (var Teacher in Model)
+    {
+        <div>
+            (@Teacher.Id) <a href="/TeacherPage/Show/@Teacher.Id">@Teacher.Name</a>
+        </div>
+    }
+</div>

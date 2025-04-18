@@ -1,0 +1,39 @@
+﻿@model Cumulative1.Model.Course
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/CoursePage/Show/@Model.Id">Back</a>
+    </nav>
+    <h2>New Course</h2>
+    <form method="POST" action="/CoursePage/Update/@Model.Id">
+        <div class="inputrow">
+            <label for="Coursecode">Course code:</label>
+            <input type="text" id="Coursecode" name="Coursecode" value="@Model.Coursecode" />
+
+        </div>
+        <div class="inputrow">
+            <label for="Teacherid">Teacher id:</label>
+            <input type="text" id="Teacherid" name="Teacherid" value="@Model.Teacherid" />
+
+        </div>
+        <div class="inputrow">
+            <label for="Name">Email:</label>
+            <input type="text" id="Name" name="Name" value="@Model.Name" />
+        </div>
+        <div class="inputrow">
+            <label for="Startdate">Start date:</label>
+            <div>
+                <textarea id="Startdate" name="Startdate">@Model.Startdate</textarea>
+            </div>
+        </div>
+        <div class="inputrow">
+            <label for="Finishdate">Start date:</label>
+            <div>
+                <textarea id="Finishdate" name="Finishdate">@Model.Finishdate</textarea>
+            </div>
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Update Course" />
+        </div>
+    </form>
+</div>

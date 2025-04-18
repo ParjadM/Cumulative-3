@@ -1,0 +1,52 @@
+﻿@model Cumulative1.Model.Course
+<style>
+    h1 {
+        color: #C4D9FF;
+    }
+
+    div {
+        border: 1px solid black;
+    }
+
+    body {
+        font-family: Arial;
+        background-color: #C5BAFF;
+    }
+</style>﻿
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/CoursePage/List">Back To Courses</a>
+    </nav>
+    <h2>New Course</h2>
+    <form method="POST" action="/CoursePage/Create">
+        <div class="inputrow">
+            <label for="Coursecode">Coursecode:</label>
+            <input type="text" id="Coursecode" name="Coursecode" />
+
+        </div>
+        <div class="inputrow">
+            <label for="Teacherid">Teacherid:</label>
+            <input type="text" id="Teacherid" name="Teacherid" />
+
+        </div>
+        <div class="inputrow">
+            <label for="Name">Name:</label>
+            <input type="text" id="Name" name="Name" />
+        </div>
+        <div class="inputrow">
+            <label for="Startdate">Startdate:</label>
+            <div>
+                <input type="date" id="Startdate" name="Startdate">
+            </div>
+        </div>
+        <div class="inputrow">
+            <label for="Finishdate">Finishdate:</label>
+            <div>
+                <input type="date" id="Finishdate" name="Finishdate">
+            </div>
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Create Course" />
+        </div>
+    </form>
+</div>
